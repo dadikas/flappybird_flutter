@@ -1,6 +1,5 @@
 import 'package:flame/components.dart';
 import 'package:flappybird_flutter/game/assets.dart';
-import 'package:flappybird_flutter/game/Bird_movement.dart';
 import 'package:flappybird_flutter/game/bird_movement.dart';
 import 'package:flappybird_flutter/game/flappybird_game.dart';
 
