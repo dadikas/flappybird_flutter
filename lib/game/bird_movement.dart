@@ -1,0 +1,1 @@
+enum bird_movement {middle,up,down}
