@@ -24,8 +24,9 @@ class FlappybirdGame extends FlameGame with TapDetector {
 
     interval.onTick = () => add(PipeGroup());
   }
+
   @override
-  void onTap(){
+  void onTap() {
     super.onTap();
     bird.fly();
   }
