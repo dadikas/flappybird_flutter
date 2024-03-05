@@ -7,7 +7,7 @@ import 'package:flappybird_flutter/components/ground.dart';
 import 'package:flappybird_flutter/components/pipe_group.dart';
 import 'package:flappybird_flutter/game/configuration.dart';
 
-class FlappybirdGame extends FlameGame with TapDetector {
+class FlappybirdGame extends FlameGame with TapDetector , HasCollisionDetection{
   FlappybirdGame();
 
   late Bird bird;
