@@ -51,7 +51,4 @@ class PipeGroup extends PositionComponent with HasGameRef<FlappybirdGame> {
       gameRef.isHit = false;
     }
   }
-  void updateScore(){
-    gameRef.bird.score += 1;
-  }
 }
