@@ -11,7 +11,6 @@ import 'package:flutter/cupertino.dart';
 class Bird extends SpriteGroupComponent<BirdMovement>
     with HasGameRef<FlappybirdGame>, CollisionCallbacks {
   Bird();
-  int score = 0;
   @override
   Future<void> onLoad() async {
     final birdMidflap = await gameRef.loadSprite(Assets.birdMidFlap);
