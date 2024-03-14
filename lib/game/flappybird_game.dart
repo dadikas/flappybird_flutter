@@ -8,6 +8,7 @@ import 'package:flappybird_flutter/components/bird.dart';
 import 'package:flappybird_flutter/components/ground.dart';
 import 'package:flappybird_flutter/components/pipe_group.dart';
 import 'package:flappybird_flutter/game/configuration.dart';
+import 'package:flutter/material.dart';
 
 class FlappybirdGame extends FlameGame with TapDetector, HasCollisionDetection {
   FlappybirdGame();
@@ -16,7 +17,7 @@ class FlappybirdGame extends FlameGame with TapDetector, HasCollisionDetection {
   late TextComponent score;
   Timer interval = Timer(Config.pipeInterval, repeat: true);
   bool isHit = false;
-
+  late TextComponent score;
   @override
   Future<void> onLoad() async {
     addAll([
@@ -34,6 +35,18 @@ class FlappybirdGame extends FlameGame with TapDetector, HasCollisionDetection {
   void onTap() {
     super.onTap();
     bird.fly();
+  }
+    TextComponent BuildScore(){
+    return TextComponent(
+      text: "Score: 0",
+      position: Vector2(size.x/2 ,size.y/2 *0.2),
+      anchor: Anchor.center,
+      textRenderer: TextPaint(
+        style: const TextStyle(
+          fontSize: 40, fontWeight: FontWeight.bold, fontFamily: "Game"
+       ),
+      )
+    );
   }
 
   TextComponent BuildScore(){
