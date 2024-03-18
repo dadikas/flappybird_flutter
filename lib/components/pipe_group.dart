@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flappybird_flutter/components/pipe.dart';
+import 'package:flappybird_flutter/game/assets.dart';
 import 'package:flappybird_flutter/game/configuration.dart';
 import 'package:flappybird_flutter/game/flappybird_game.dart';
 import 'package:flappybird_flutter/game/pipe_position.dart';
@@ -34,6 +36,7 @@ class PipeGroup extends PositionComponent with HasGameRef<FlappybirdGame> {
   }
   void updateScore(){
     gameRef.bird.score += 1;
+    FlameAudio.play(Assets.point);
   }
 
   @override

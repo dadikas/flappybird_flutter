@@ -7,6 +7,7 @@ import 'package:flappybird_flutter/game/configuration.dart';
 import 'package:flappybird_flutter/game/flappybird_game.dart';
 import 'package:flappybird_flutter/screens/game_over_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flame_audio/flame_audio.dart';
 
 class Bird extends SpriteGroupComponent<BirdMovement>
     with HasGameRef<FlappybirdGame>, CollisionCallbacks {
@@ -38,6 +39,7 @@ class Bird extends SpriteGroupComponent<BirdMovement>
           onComplete: () => current = BirdMovement.down),
     );
     current = BirdMovement.up;
+    FlameAudio.play(Assets.flying);
   }
 
   @override
@@ -54,6 +56,7 @@ class Bird extends SpriteGroupComponent<BirdMovement>
   }
 
   void gameOver() {
+    FlameAudio.play(Assets.collision);
     gameRef.overlays.add(GameOverScreen.id);
     gameRef.pauseEngine();
     game.isHit = true;
